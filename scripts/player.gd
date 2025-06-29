@@ -4,7 +4,7 @@ extends CharacterBody2D
 const MAX_SPEED = 200.0
 const ACCELERATION = 1000.0
 const FRICTION = 800.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -400.0
 const BASE_GRAVITY = 1200.0
 const FALL_MULTIPLIER = 1
 
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0  # Reset when grounded
 
 	# Handle jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Handle  movement

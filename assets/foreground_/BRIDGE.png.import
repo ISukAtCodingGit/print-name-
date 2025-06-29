@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl7jtvu30h4ba"
-path="res://.godot/imported/eventBlock_.png-3dcfe45ea91e8930087ee5d3b5b9dfc0.ctex"
+uid="uid://1iuc6ndkw6p5"
+path="res://.godot/imported/BRIDGE.png-010b9a4e256ff040a384fbbcd350de93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects_/eventBlock_.png"
-dest_files=["res://.godot/imported/eventBlock_.png-3dcfe45ea91e8930087ee5d3b5b9dfc0.ctex"]
+source_file="res://assets/foreground_/BRIDGE.png"
+dest_files=["res://.godot/imported/BRIDGE.png-010b9a4e256ff040a384fbbcd350de93.ctex"]
 
 [params]
 

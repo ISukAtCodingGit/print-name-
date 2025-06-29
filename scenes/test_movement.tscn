@@ -1,10 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://c53lgii04peow"]
 
-[ext_resource type="Texture2D" uid="uid://dpxpiopv3j417" path="res://midground_/summer_.png" id="1_27mbn"]
 [ext_resource type="PackedScene" uid="uid://c2elmkd17xrsr" path="res://scenes/player.tscn" id="2_6wnlg"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a00qx"]
+load_path = "res://.godot/imported/summer_.png-f1157d60601a41a25c3ac54221c2fa4a.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xmy4"]
-texture = ExtResource("1_27mbn")
+texture = SubResource("CompressedTexture2D_a00qx")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
