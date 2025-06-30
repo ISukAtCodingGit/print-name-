@@ -4,6 +4,9 @@ var bridge_scene = preload("res://scenes/bridge.tscn")
 var bridge = bridge_scene.instantiate()
 
 func _on_body_entered(body: Node2D) -> void:
+	
+	#shows (summon) the bridge
+	
 	if body.name == "player":
 		get_parent().add_child(bridge)
 		await get_tree().process_frame
