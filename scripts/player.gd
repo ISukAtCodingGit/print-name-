@@ -7,10 +7,16 @@ const FRICTION = 800.0
 const JUMP_VELOCITY = -400.0
 const BASE_GRAVITY = 1200.0
 const FALL_MULTIPLIER = 1
+const BOOST_VELOCITY = -250.0
+
+var jumped := false
+var boosted := false
 
 # Get nodes
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
+#movements
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 
@@ -23,11 +29,18 @@ func _physics_process(delta: float) -> void:
 			velocity.y += BASE_GRAVITY * delta
 	else:
 		velocity.y = 0  # Reset when grounded
+		jumped = false
+		boosted = false
 
 	# Handle jump
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jumped = true
 
+	#Boost jump
+	if Input.is_action_pressed("boost jump") and not is_on_floor() and boosted == false:
+		velocity.y = BOOST_VELOCITY
+		boosted == true
 	# Handle  movement
 	if direction != 0:
 		velocity.x = move_toward(velocity.x, direction * MAX_SPEED, ACCELERATION * delta)
