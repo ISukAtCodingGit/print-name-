@@ -1,14 +1,9 @@
 extends Area2D
 
-var bridge_scene = preload("res://scenes/bridge.tscn")
-var bridge = bridge_scene.instantiate()
-
 func _on_body_entered(body: Node2D) -> void:
-	
-	#shows (summon) the bridge
-	
 	if body.name == "player":
-		get_parent().add_child(bridge)
-		await get_tree().process_frame
-		bridge.get_bridge()
-		print("bridge got")
+		var bridge = get_tree().current_scene.get_node("bridge")
+		if bridge:
+			bridge.show()
+			if bridge.has_node("CollisionShape2D"):
+				bridge.get_node("CollisionShape2D").set_deferred("disabled", false)

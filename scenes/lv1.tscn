@@ -417,6 +417,7 @@ layer_0/tile_data = PackedInt32Array(65529, 720896, 12, 2, 720896, 12, 1, 720896
 position = Vector2(-88, -14)
 
 [node name="bridge" parent="." instance=ExtResource("2_4pb43")]
+visible = false
 position = Vector2(977, -61)
 
 [node name="getbridge" parent="." instance=ExtResource("3_4pb43")]
