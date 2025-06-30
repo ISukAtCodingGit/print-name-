@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcwocobxo2kyh"]
+
+[ext_resource type="Script" uid="uid://cqvm6cvoqlbgj" path="res://scripts/getbridge.gd" id="1_so8ie"]
+[ext_resource type="Texture2D" uid="uid://cd8b2kx2gatu" path="res://icon.svg" id="1_sy36k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy36k"]
+size = Vector2(8, 38)
+
+[node name="getbridge" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_so8ie")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(0.0546875, 0.304688)
+texture = ExtResource("1_sy36k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sy36k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
