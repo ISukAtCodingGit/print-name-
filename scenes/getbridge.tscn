@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7jp7pur1ga6b"]
+[gd_scene load_steps=7 format=3 uid="uid://dcwocobxo2kyh"]
 
 [ext_resource type="Script" uid="uid://mexqhwbt4aqw" path="res://scripts/getbridge.gd" id="1_so8ie"]
 [ext_resource type="Texture2D" uid="uid://bykpn0qracdbk" path="res://assets/Bronze-Lever-Sheet.png" id="2_so8ie"]
