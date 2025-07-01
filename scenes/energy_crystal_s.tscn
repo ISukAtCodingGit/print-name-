@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddudmo4qtqxsk"]
+
+[ext_resource type="Texture2D" uid="uid://bit0oik57f2v2" path="res://assets/energy_crystal_S.png" id="1_66hkx"]
+[ext_resource type="Script" uid="uid://bw0hp74lkt20w" path="res://scripts/energy_crystal_s.gd" id="1_ihhxv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihhxv"]
+radius = 8.0
+
+[node name="Energy_Crystal_S" type="Area2D"]
+collision_layer = 16
+collision_mask = 31
+script = ExtResource("1_ihhxv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_66hkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ihhxv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
