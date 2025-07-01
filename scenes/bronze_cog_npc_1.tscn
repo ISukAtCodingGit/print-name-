@@ -1,0 +1,140 @@
+[gd_scene load_steps=19 format=3 uid="uid://dbkay18japcbs"]
+
+[ext_resource type="Texture2D" uid="uid://dj3sp7t5frueo" path="res://assets/Bronze-Cog-NPC-Sheet.png" id="1_atm6c"]
+[ext_resource type="Script" uid="uid://rfg86fjcsvq3" path="res://scripts/bronze_cog_npc_1.gd" id="1_e3vdk"]
+[ext_resource type="Texture2D" uid="uid://ddpps5ji6luw0" path="res://assets/BIGSpeech_bubble.png" id="2_6amun"]
+[ext_resource type="FontFile" uid="uid://clx2jr6s3bk1y" path="res://assets/fonts/Teeny Tiny Pixls.otf" id="3_6amun"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gav4a"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6amun"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(16, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3vdk"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(32, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahbcn"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(48, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_720dp"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(64, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtuab"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(80, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1mli"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(96, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2my3c"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(112, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywmhr"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(128, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbo8h"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(144, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83l0o"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(160, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j37y7"]
+atlas = ExtResource("1_atm6c")
+region = Rect2(176, 0, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2rcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gav4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6amun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3vdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahbcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_720dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtuab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1mli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2my3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywmhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbo8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83l0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j37y7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ard2q"]
+radius = 60.075
+
+[node name="BronzeCogNPC1" type="Node2D"]
+script = ExtResource("1_e3vdk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g2rcr")
+autoplay = "default"
+frame_progress = 0.987882
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+shape = SubResource("CircleShape2D_ard2q")
+
+[node name="Text" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(41.4078, -28.9949)
+scale = Vector2(1.29631, 1.1202)
+texture = ExtResource("2_6amun")
+flip_h = true
+region_rect = Rect2(0, 0, 26, 23)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 12.4078
+offset_top = -51.9949
+offset_right = 84.4078
+offset_bottom = -9.99489
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6amun")
+theme_override_font_sizes/font_size = 5
+text = "I heard you can
+boost your jump
+with V when 
+you're in the 
+air..."
+
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]
+[connection signal="body_exited" from="DetectPlayer" to="." method="_on_detect_player_body_exited"]
