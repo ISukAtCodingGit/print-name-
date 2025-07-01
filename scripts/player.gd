@@ -1,20 +1,24 @@
 extends CharacterBody2D
 
-# Movement values
+#Constants
 const MAX_SPEED = 200.0
 const ACCELERATION = 1000.0
 const FRICTION = 800.0
 const JUMP_VELOCITY = -400.0
 const BASE_GRAVITY = 1200.0
 const FALL_MULTIPLIER = 1
-const BOOST_VELOCITY = -250.0
+const BOOST_VELOCITY = -275.0
 
+#booleans
 var jumped := false
 var boosted := false
 
+#Int variables
+var boosts = 1
+var used_boosts = 0
+
 # Get nodes
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
 
 #movements
 func _physics_process(delta: float) -> void:
@@ -31,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0  # Reset when grounded
 		jumped = false
 		boosted = false
+		used_boosts = 0
 
 	# Handle jump
 	if Input.is_action_pressed("jump") and is_on_floor():
@@ -38,9 +43,10 @@ func _physics_process(delta: float) -> void:
 		jumped = true
 
 	#Boost jump
-	if Input.is_action_pressed("boost jump") and not is_on_floor() and boosted == false:
+	if Input.is_action_pressed("boost jump") and not is_on_floor() and boosted == false and used_boosts < boosts:
 		velocity.y = BOOST_VELOCITY
 		boosted == true
+		used_boosts += 1
 	# Handle  movement
 	if direction != 0:
 		velocity.x = move_toward(velocity.x, direction * MAX_SPEED, ACCELERATION * delta)
