@@ -1,7 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcwocobxo2kyh"]
+[gd_scene load_steps=7 format=3 uid="uid://dcwocobxo2kyh"]
 
 [ext_resource type="Script" uid="uid://cqvm6cvoqlbgj" path="res://scripts/getbridge.gd" id="1_so8ie"]
-[ext_resource type="Texture2D" uid="uid://cd8b2kx2gatu" path="res://icon.svg" id="1_sy36k"]
+[ext_resource type="Texture2D" uid="uid://crl8yr044ystv" path="res://assets/Bronze-Lever-Sheet.png" id="2_so8ie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdy8e"]
+atlas = ExtResource("2_so8ie")
+region = Rect2(0, 0, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4decb"]
+atlas = ExtResource("2_so8ie")
+region = Rect2(22, 0, 22, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsmjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdy8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4decb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sy36k"]
 size = Vector2(8, 38)
@@ -11,10 +33,8 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_so8ie")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-3.8147e-06, 0)
-scale = Vector2(0.0546875, 0.304688)
-texture = ExtResource("1_sy36k")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jsmjs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sy36k")

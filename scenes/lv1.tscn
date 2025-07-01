@@ -423,7 +423,7 @@ position = Vector2(976, -71)
 rotation = -0.121894
 
 [node name="getbridge" parent="." instance=ExtResource("3_4pb43")]
-position = Vector2(848, -83)
+position = Vector2(848, -80)
 
 [node name="World Killzone" parent="." instance=ExtResource("4_840sv")]
 position = Vector2(626, 68)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3m5dkj68s4xo"]
 
-[ext_resource type="Texture2D" path="res://assets/BRIDGE.png" id="1_7ct4w"]
 [ext_resource type="Script" uid="uid://s62jfoo5pdlv" path="res://scripts/bridge.gd" id="1_im2sa"]
+[ext_resource type="Texture2D" uid="uid://bsw2t7injrjur" path="res://assets/BRIDGE.png" id="2_im2sa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_im2sa"]
 size = Vector2(132, 6)
@@ -10,7 +10,7 @@ size = Vector2(132, 6)
 script = ExtResource("1_im2sa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_7ct4w")
+texture = ExtResource("2_im2sa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
