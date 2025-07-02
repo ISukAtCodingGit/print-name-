@@ -6,7 +6,7 @@ extends Node2D
 
 func _ready() -> void:
 	pass
-
+	
 
 #Handle speech
 func _on_detect_player_body_entered(body: Node2D) -> void:
