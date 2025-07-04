@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dbkay18japcbs"]
+[gd_scene load_steps=20 format=4 uid="uid://fv6tf5bxyqtc"]
 
 [ext_resource type="Texture2D" uid="uid://dj3sp7t5frueo" path="res://assets/Bronze-Cog-NPC-Sheet.png" id="1_atm6c"]
 [ext_resource type="Script" uid="uid://rfg86fjcsvq3" path="res://scripts/bronze_cog_npc_1.gd" id="1_e3vdk"]
@@ -114,6 +114,7 @@ font_name = "Teeny Tiny Pixls"
 style_name = "Regular"
 subpixel_positioning = 0
 msdf_pixel_range = 8
+msdf_size = 128
 cache/0/16/0/ascent = 16.0
 cache/0/16/0/descent = 4.0
 cache/0/16/0/underline_position = -1.20313
