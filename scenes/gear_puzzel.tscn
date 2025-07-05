@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfnsotio1s7e1"]
 
 [ext_resource type="Texture2D" uid="uid://cd8b2kx2gatu" path="res://icon.svg" id="1_gdjgt"]
-[ext_resource type="PackedScene" uid="uid://rb7iv7yofcys" path="res://scenes/gear_puzzel_gear.tscn" id="1_sb2lw"]
+[ext_resource type="PackedScene" uid="uid://beynvpek0kfue" path="res://scenes/gear_puzzel_gear.tscn" id="1_sb2lw"]
 
 [node name="gear_puzzel" type="Node2D"]
 
 [node name="Gear_Puzzel" parent="." instance=ExtResource("1_sb2lw")]
-offset_left = -2.0
-offset_top = -1.0
-offset_right = 38.0
-offset_bottom = 39.0
+offset_left = 151.0
+offset_top = 9.0
+offset_right = 191.0
+offset_bottom = 49.0
 texture = ExtResource("1_gdjgt")
 
 [node name="Gear_Puzzel2" parent="." instance=ExtResource("1_sb2lw")]
