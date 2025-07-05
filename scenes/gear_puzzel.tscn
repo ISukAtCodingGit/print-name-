@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://rb7iv7yofcys"]
+[gd_scene load_steps=3 format=3 uid="uid://dfnsotio1s7e1"]
 
-[node name="Gear_Puzzel" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://cd8b2kx2gatu" path="res://icon.svg" id="1_gdjgt"]
+[ext_resource type="PackedScene" uid="uid://rb7iv7yofcys" path="res://scenes/gear_puzzel_gear.tscn" id="1_sb2lw"]
+
+[node name="gear_puzzel" type="Node2D"]
+
+[node name="Gear_Puzzel" parent="." instance=ExtResource("1_sb2lw")]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 38.0
+offset_bottom = 39.0
+texture = ExtResource("1_gdjgt")
+
+[node name="Gear_Puzzel2" parent="." instance=ExtResource("1_sb2lw")]
+offset_left = 148.0
+offset_right = 188.0
+offset_bottom = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(93, 21)
+zoom = Vector2(3, 3)
