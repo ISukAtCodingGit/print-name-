@@ -1,22 +1,73 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfnsotio1s7e1"]
+[gd_scene load_steps=7 format=3 uid="uid://dfnsotio1s7e1"]
 
-[ext_resource type="Texture2D" uid="uid://cd8b2kx2gatu" path="res://icon.svg" id="1_gdjgt"]
-[ext_resource type="PackedScene" uid="uid://beynvpek0kfue" path="res://scenes/gear_puzzel_gear.tscn" id="1_sb2lw"]
+[ext_resource type="Script" uid="uid://bwtjyfdkhw7wn" path="res://scripts/gear_puzzel.gd" id="1_fjoqr"]
+[ext_resource type="PackedScene" uid="uid://rb7iv7yofcys" path="res://scenes/gear_puzzel_gear.tscn" id="1_sb2lw"]
+[ext_resource type="Texture2D" uid="uid://c687ywfa0nrqf" path="res://assets/gear_puzzel_gear.png" id="3_cfowa"]
+[ext_resource type="Texture2D" uid="uid://c4i0n5luk808k" path="res://assets/gear_puzzel_gear_placer.png" id="3_fjoqr"]
+[ext_resource type="Texture2D" uid="uid://byhoxeltapwcg" path="res://assets/gear_Puzzel_Background.png" id="3_s2t1i"]
+[ext_resource type="Texture2D" uid="uid://lhlhjbq4te1a" path="res://assets/gear_puzzel_placed_gear.png" id="6_wvhix"]
 
 [node name="gear_puzzel" type="Node2D"]
+script = ExtResource("1_fjoqr")
 
-[node name="Gear_Puzzel" parent="." instance=ExtResource("1_sb2lw")]
-offset_left = 151.0
-offset_top = 9.0
-offset_right = 191.0
-offset_bottom = 49.0
-texture = ExtResource("1_gdjgt")
-
-[node name="Gear_Puzzel2" parent="." instance=ExtResource("1_sb2lw")]
-offset_left = 148.0
-offset_right = 188.0
-offset_bottom = 40.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(81, 20)
+texture = ExtResource("3_s2t1i")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(93, 21)
-zoom = Vector2(3, 3)
+position = Vector2(81, 20)
+zoom = Vector2(8, 8)
+
+[node name="Gear_Puzzel" parent="." instance=ExtResource("1_sb2lw")]
+custom_minimum_size = Vector2(4, 4)
+offset_left = 19.0
+offset_top = -1.0
+offset_right = 35.0
+offset_bottom = 15.0
+texture = ExtResource("3_fjoqr")
+expand_mode = 0
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Gear_Puzzel2" parent="." instance=ExtResource("1_sb2lw")]
+offset_left = 145.0
+offset_top = -7.0
+offset_right = 161.0
+offset_bottom = 9.0
+texture = ExtResource("3_cfowa")
+
+[node name="Gear_Puzzel3" parent="." instance=ExtResource("1_sb2lw")]
+offset_left = 145.0
+offset_top = 11.0
+offset_right = 161.0
+offset_bottom = 27.0
+texture = ExtResource("3_cfowa")
+
+[node name="placed gear" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(27, 7)
+texture = ExtResource("6_wvhix")
+
+[node name="gear stem" type="Sprite2D" parent="."]
+position = Vector2(27, 7)
+texture = ExtResource("3_fjoqr")
+
+[node name="Gear_Puzzel4" parent="." instance=ExtResource("1_sb2lw")]
+custom_minimum_size = Vector2(4, 4)
+offset_left = 35.0
+offset_top = 15.0
+offset_right = 51.0
+offset_bottom = 31.0
+texture = ExtResource("3_fjoqr")
+expand_mode = 0
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="placed gear2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(43, 23)
+texture = ExtResource("6_wvhix")
+
+[node name="gear stem2" type="Sprite2D" parent="."]
+position = Vector2(43, 23)
+texture = ExtResource("3_fjoqr")
